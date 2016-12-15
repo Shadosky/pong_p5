@@ -29,7 +29,7 @@ function setup() {
 function draw() {
     background(51);
 
-
+    enemy.calc();
     ball.testContact();
     ball.update();
     player.update();

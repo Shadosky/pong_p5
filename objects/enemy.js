@@ -17,7 +17,27 @@ function Enemy()
 
     this.update = function ()
     {
-        this.y = constrain(ball.y-scl,  0, height-(scl*this.size));
+        this.y = constrain(this.y+this.yspeed,  0, height-(scl*this.size));
+    }
+
+    this.dir = function (y)
+    {
+        this.yspeed = (y*scl);
+
+    }
+
+    this.calc = function () {
+        if (ball.x > width/3  && ball.xspeed > 0) {
+            if (this.y > ball.y) {
+                this.dir(-1);
+            } else if (this.y < ball.y) {
+                this.dir(1);
+            } else {
+                this.dir(0);
+            }
+        } else {
+            this.dir(0);
+        }
     }
 
 }

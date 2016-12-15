@@ -102,6 +102,10 @@ function Ball()
 
         if (this.x == 0 ) {
             score2.score ++;
+            if(score2.score == 10) {
+                score2.score = 0;
+                score1.score = 0;
+            }
 
             this.x = (rows/2-1)*scl;
             this.y = (cols/2-1)*scl;
@@ -115,6 +119,10 @@ function Ball()
 
         if (this.x == width-scl ) {
             score1.score ++;
+            if(score1.score == 10) {
+                score2.score = 0;
+                score1.score = 0;
+            }
 
             this.x = (rows/2-1)*scl;
             this.y = (cols/2-1)*scl;
